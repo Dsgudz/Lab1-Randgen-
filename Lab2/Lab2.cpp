@@ -27,7 +27,9 @@ bool chkRabMiller(unsigned long a)
 
 	for (int i = 0; i < 10; i++)
 	{
-		buff = pow(((rand()) % (d - 1) + 1), d);
+		buff = pow(((rand()) % (d)), d);
+		if (buff == 0)
+			flag = true;
 		if (buff % a == 1)
 			flag = true;
 
