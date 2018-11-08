@@ -238,7 +238,7 @@ private:
 			a22 = &a1;
 		}
 
-		long s = a11->size();
+		long s = a22->size();
 		for (int i = 0; i < s / 2; i++)
 		{
 			a.theword[i] = a11->theword[i];
