@@ -47,7 +47,7 @@ bool chkRabMiller(unsigned long a)
 
 bool chkLemer(unsigned int a)
 {
-	if (!chkRabMiller)
+	if (!chkRabMiller(a))
 		return false;
 
 	if (a == 2) // yeah thats crutch but that is correct and sshort code
