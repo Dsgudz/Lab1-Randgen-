@@ -12,15 +12,23 @@ bool chkRabMiller(unsigned long a)
 	int s = 0;
 	bool flag = false;
 	int buff;
+
+	if (a == 2)
+		return true;
+
+
 	while (d % 2 == 0)
 	{
 		s++;
 		d /= 2;
 	}
+
+
+
 	for (int i = 0; i < 10; i++)
 	{
-		buff = pow((rand() % d), d);
-		if (d % a == 1)
+		buff = pow(((rand() + 1) % d), d);
+		if (buff % a == 1)
 			flag = true;
 
 		for (int j = 0; j < s; j++)
@@ -33,6 +41,7 @@ bool chkRabMiller(unsigned long a)
 			return false;
 		flag = false;
 	}
+
 	return true;
 }
 
