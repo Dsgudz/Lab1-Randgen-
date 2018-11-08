@@ -6,7 +6,7 @@
 
 using namespace std;
 
-bool chkrabmiller(unsigned long a)
+bool chkRabMiller(unsigned long a)
 {
 	unsigned long d = a - 1;
 	int s = 0;
@@ -36,7 +36,24 @@ bool chkrabmiller(unsigned long a)
 	return true;
 }
 
+bool chkLemer(unsigned int a)
+{
+	if (!chkRabMiller)
+		return false;
 
+	long stor = 4;
+	long buff = 2;
+	for (int i = 2; i < a - 1; i++)
+	{
+		stor = stor*stor - 2;
+		buff *= 2;
+	}
+
+	if (stor % (buff - 1) == 0)
+		return true;
+	return false;
+
+}
 
 
 
@@ -324,8 +341,8 @@ int main()
 {
 	long a;
 	cin >> a;
-	cout << "Rabmiller:" << chkrabmiller(a) << endl;
-
+	cout << "Rabmiller:" << chkRabMiller(a) << endl;
+	cout << "Lemer:" << chkLemer(a) << endl;
 
 
 	/*reallylong A, B, C;
