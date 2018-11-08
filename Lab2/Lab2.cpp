@@ -41,9 +41,12 @@ bool chkLemer(unsigned int a)
 	if (!chkRabMiller)
 		return false;
 
+	if (a == 2) // yeah thats crutch but that is correct and sshort code
+		return true;
+
 	long stor = 4;
-	long buff = 2;
-	for (int i = 2; i < a - 1; i++)
+	long buff = 4;
+	for (int i = 2; i <= a - 1; i++)
 	{
 		stor = stor*stor - 2;
 		buff *= 2;
