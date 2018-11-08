@@ -17,7 +17,6 @@ bool chkrabmiller(unsigned long a)
 		s++;
 		d /= 2;
 	}
-
 	for (int i = 0; i < 10; i++)
 	{
 		buff = pow((rand() % d), d);
@@ -30,15 +29,10 @@ bool chkrabmiller(unsigned long a)
 			if (buff % d == -1)
 				flag = true;
 		}
-
 		if (!flag)
 			return false;
-		
 		flag = false;
 	}
-
-
-
 	return true;
 }
 
@@ -328,7 +322,9 @@ private:
 
 int main()
 {
-	cout << chkrabmiller(17) << endl;
+	long a;
+	cin >> a;
+	cout << "Rabmiller:" << chkrabmiller(a) << endl;
 
 
 
