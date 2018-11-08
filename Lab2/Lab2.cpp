@@ -27,14 +27,14 @@ bool chkRabMiller(unsigned long a)
 
 	for (int i = 0; i < 10; i++)
 	{
-		buff = pow(((rand() + 1) % d), d);
+		buff = pow(((rand()) % (d - 1) + 1), d);
 		if (buff % a == 1)
 			flag = true;
 
 		for (int j = 0; j < s; j++)
 		{
 			buff *= buff;
-			if (buff % d == -1)
+			if (buff % d == d - 1)
 				flag = true;
 		}
 		if (!flag)
