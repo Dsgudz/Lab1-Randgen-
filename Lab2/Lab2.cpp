@@ -1,9 +1,51 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 #define DEBUGCOUTMAYBE true
 
 using namespace std;
+
+bool chkrabmiller(unsigned long a)
+{
+	unsigned long d = a - 1;
+	int s = 0;
+	bool flag = false;
+	int buff;
+	while (d % 2 == 0)
+	{
+		s++;
+		d /= 2;
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		buff = pow((rand() % d), d);
+		if (d % a == 1)
+			flag = true;
+
+		for (int j = 0; j < s; j++)
+		{
+			buff *= buff;
+			if (buff % d == -1)
+				flag = true;
+		}
+
+		if (!flag)
+			return false;
+		
+		flag = false;
+	}
+
+
+
+	return true;
+}
+
+
+
+
+
 
 
 class reallylong
@@ -286,15 +328,18 @@ private:
 
 int main()
 {
+	cout << chkrabmiller(17) << endl;
 
-	reallylong A, B, C;
+
+
+	/*reallylong A, B, C;
 	//reallylong::setmult(0);
 	A = "872654351";
 	B = "1606546879";
 
 	C = A;
 	C *= B;
-	cout << string(A) << "*" << string(B) << "=" << string(C) << endl;
+	cout << string(A) << "*" << string(B) << "=" << string(C) << endl;*/
     return 0;
 }
 
