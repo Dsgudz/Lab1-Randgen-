@@ -129,17 +129,28 @@ public:
 		long x = 0;
 		reallylong a, b, c, d, ac, abcd, bd, res;
 		divkara(a1, a, b, a2, c, d, x);
+		
 		a.debug_cout();
 		b.debug_cout();
 		c.debug_cout();
 		d.debug_cout();
+
 		ac = karatsuba(a, c);
+
 		ac.debug_cout();
+
 		bd = karatsuba(b, d);
+
 		bd.debug_cout();
+
 		a += b;
 		c += d;
+
+		a.debug_cout();
+		c.debug_cout();
+
 		abcd = karatsuba(a, c);
+
 		abcd.debug_cout();
 
 		res = bd;
@@ -255,7 +266,7 @@ private:
 	}
 
 	const static long mdl = 10;
-	long long Npack = 10;
+	long long Npack = 30;
 	long* theword;
 
 
@@ -291,8 +302,8 @@ int main()
 
 	reallylong A, B, C;
 	//reallylong::setmult(0);
-	A = "6721";
-	B = "1099";
+	A = "8721";
+	B = "1609";
 
 	C = A;
 	C *= B;
