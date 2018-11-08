@@ -129,44 +129,30 @@ public:
 		long x = 0;
 		reallylong a, b, c, d, ac, abcd, bd, res;
 		divkara(a1, a, b, a2, c, d, x);
-		
-		a.debug_cout();
-		b.debug_cout();
-		c.debug_cout();
-		d.debug_cout();
 
 		ac = karatsuba(a, c);
 
-		ac.debug_cout();
-
 		bd = karatsuba(b, d);
-
-		bd.debug_cout();
 
 		a += b;
 		c += d;
 
-		a.debug_cout();
-		c.debug_cout();
-
 		abcd = karatsuba(a, c);
-
-		abcd.debug_cout();
 
 		res = bd;
 
 		res.modmult(x);
-		
+
 		res += abcd;
 		
 		res -= ac;
-		
+
 		res -= bd;
-		
+
 		res.modmult(x);
-		
+
 		res += ac;
-		
+
 		return res;
 	};
 
@@ -176,7 +162,8 @@ public:
 		for (int j = 0; j<x; j++)
 		for (int i = Npack - 1; i > 0; i--)
 			theword[i] = theword[i - 1];
-		theword[0] = 0;
+		for (int i = 0; i<x; i++)
+			theword[i] = 0;
 	}
 
 	static reallylong(reallylong::*ptmult)(reallylong, reallylong);
@@ -302,8 +289,8 @@ int main()
 
 	reallylong A, B, C;
 	//reallylong::setmult(0);
-	A = "8721";
-	B = "1609";
+	A = "872654351";
+	B = "1606546879";
 
 	C = A;
 	C *= B;
