@@ -12,6 +12,7 @@ bool chkRabMiller(unsigned long a)
 	int s = 0;
 	bool flag = false;
 	int buff;
+	int stor;
 
 	if (a < 4)
 		return true;
@@ -27,14 +28,19 @@ bool chkRabMiller(unsigned long a)
 
 	for (int i = 0; i < 10; i++)
 	{
-		buff = pow(((rand()) % (d)), d);
+		stor = rand() % (a-3) + 2;
+		buff = pow(stor , d);
+		if ((buff == 0) && (d != 1))
+			flag = true;
+
 		if (buff % a == 1)
 			flag = true;
 
 		for (int j = 0; j < s; j++)
 		{
 			buff *= buff;
-			if (buff % d == d - 1)
+			stor *= stor;
+			if ((buff % d) == (-1 % d))
 				flag = true;
 		}
 		if (!flag)
@@ -57,7 +63,7 @@ bool chkLemer(unsigned int a)
 	long buff = 4;
 	for (int i = 2; i <= a - 1; i++)
 	{
-		stor = stor*stor - 2;
+		stor = stor*stor- 2;
 		buff *= 2;
 	}
 
